@@ -78,14 +78,17 @@
             </div>
         </section>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-center">
+        <section class="mb-12">
             <div class="bg-white p-8 rounded-xl shadow-lg">
                 <h2 class="text-3xl font-bold mb-4 text-[#118AB2]">What is Session?</h2>
                 <p class="mb-4">Session is a decentralized messaging app focused on providing maximum user privacy and anonymity. It uses a global network of community-operated nodes to route messages, ensuring that no central entity can access user metadata.</p>
                 <p>Unlike mainstream apps, Session's core architecture is designed to protect not just what you say, but who you say it to.</p>
             </div>
+        </section>
+
+        <section class="mb-12">
             <div class="bg-white p-8 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold mb-4 text-center text-[#118AB2]">How Onion Routing Works</h3>
+                <h2 class="text-3xl font-bold mb-6 text-center text-[#118AB2]">How Onion Routing Works</h2>
 
                 <!-- Mobile view: vertical flow -->
                 <div class="flex flex-col items-center space-y-4 md:hidden">
@@ -120,40 +123,40 @@
                     </div>
                 </div>
 
-                <!-- Desktop view: horizontal flow -->
-                <div class="hidden md:flex md:justify-around md:items-center md:text-center">
-                    <div class="flex flex-col items-center">
+                <!-- Desktop view: horizontal flow with more space -->
+                <div class="hidden md:flex md:flex-wrap md:justify-center md:gap-6 md:items-center md:text-center max-w-5xl mx-auto">
+                    <div class="flex flex-col items-center m-3">
                         <div class="text-4xl">📱</div>
                         <p class="font-semibold mt-2">You</p>
                         <p class="text-xs text-gray-600">New York, USA</p>
                     </div>
-                    <div class="font-bold text-2xl text-[#06D6A0]">&rarr;</div>
-                    <div class="flex flex-col items-center">
+                    <div class="font-bold text-2xl text-[#06D6A0] m-3">&rarr;</div>
+                    <div class="flex flex-col items-center m-3">
                         <div class="text-4xl">🛡️</div>
                         <p class="font-semibold mt-2">Node 1</p>
                         <p class="text-xs text-gray-600">London, UK</p>
                     </div>
-                    <div class="font-bold text-2xl text-[#FFD166]">&rarr;</div>
-                    <div class="flex flex-col items-center">
+                    <div class="font-bold text-2xl text-[#FFD166] m-3">&rarr;</div>
+                    <div class="flex flex-col items-center m-3">
                         <div class="text-4xl">🛡️</div>
                         <p class="font-semibold mt-2">Node 2</p>
                         <p class="text-xs text-gray-600">Tokyo, Japan</p>
                     </div>
-                    <div class="font-bold text-2xl text-[#118AB2]">&rarr;</div>
-                    <div class="flex flex-col items-center">
+                    <div class="font-bold text-2xl text-[#118AB2] m-3">&rarr;</div>
+                    <div class="flex flex-col items-center m-3">
                         <div class="text-4xl">🛡️</div>
                         <p class="font-semibold mt-2">Node 3</p>
                         <p class="text-xs text-gray-600">Sydney, Australia</p>
                     </div>
-                    <div class="font-bold text-2xl text-[#FF6B6B]">&rarr;</div>
-                    <div class="flex flex-col items-center">
+                    <div class="font-bold text-2xl text-[#FF6B6B] m-3">&rarr;</div>
+                    <div class="flex flex-col items-center m-3">
                         <div class="text-4xl">📱</div>
                         <p class="font-semibold mt-2">Recipient</p>
                         <p class="text-xs text-gray-600">Berlin, Germany</p>
                     </div>
                 </div>
 
-                <p class="text-sm text-center mt-4">Each node only knows the previous and next step, so no single point can link sender to recipient, protecting your metadata.</p>
+                <p class="text-sm text-center mt-6">Each node only knows the previous and next step, so no single point can link sender to recipient, protecting your metadata.</p>
             </div>
         </section>
 
