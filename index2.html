@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SESH Token: An Interactive Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfcfa;
+            color: #3d3d3d;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #5d4037;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 15px -2px rgba(93, 64, 55, 0.08);
+            border: 1px solid #f0ebe5;
+        }
+        .accent-color { color: #7E8D63; }
+        .accent-bg { background-color: #7E8D63; }
+        .risk-tab {
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.2s ease-in-out;
+            font-weight: 600;
+        }
+        .risk-tab.active {
+            background-color: #5d4037;
+            color: #ffffff;
+            border-color: #5d4037;
+        }
+        .risk-tab:not(.active):hover {
+            background-color: #f0ebe5;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <header class="text-center my-12 lg:my-16">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#5d4037] mb-4">SESH: A DePIN Investment Thesis</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">An interactive analysis of the Session messenger's token, economic model, and future prospects.</p>
+        </header>
+
+        <main class="space-y-16 lg:space-y-24">
+
+            <section id="executive-summary">
+                <h2 class="section-title">Executive Summary: The Core Thesis</h2>
+                <div class="card mb-8">
+                    <p class="text-lg leading-relaxed">The SESH token presents a high-risk, high-reward investment case, hinging on the Session team's ability to convert its strong privacy-first value proposition into a sustainable economic flywheel. The recent migration to Arbitrum is a pivotal strategic shift to unlock Web3-native value accrual. The investment thesis is a bet on execution: can the project deliver its ambitious roadmap and turn ideological appeal into tangible economic activity before significant vesting unlocks introduce major sell pressure?</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card border-t-4 border-[#7E8D63]">
+                        <h3 class="font-bold text-xl mb-2 text-[#7E8D63]">Bullish Scenario</h3>
+                        <p>Successful Session Pro launch drives utility demand, absorbing vesting unlocks. User growth accelerates, establishing SESH as a blue-chip DePIN asset valued on revenue.</p>
+                    </div>
+                    <div class="card border-t-4 border-[#BFA26E]">
+                        <h3 class="font-bold text-xl mb-2 text-[#BFA26E]">Neutral Scenario</h3>
+                        <p>Session remains a niche app. Token value is driven by staking inflation, not utility, and its price action remains correlated with the broader crypto market.</p>
+                    </div>
+                    <div class="card border-t-4 border-[#A95C54]">
+                        <h3 class="font-bold text-xl mb-2 text-[#A95C54]">Bearish Scenario</h3>
+                        <p>Execution fails, user experience languishes, and vesting unlocks crash the price. The economic flywheel never starts, leading to a network death spiral.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="product-market">
+                <h2 class="section-title">The Product & Market Landscape</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3 card">
+                        <h3 class="text-2xl font-bold mb-4">What is Session?</h3>
+                        <p>Session is a decentralized messenger built as a fork of the Signal Protocol, designed for true anonymity. Its key differentiator is its DePIN architecture: a network of over 2,000 community-run nodes that route messages via an onion-routing system. This protects user metadata in a way centralized services cannot. The project's strategic relocation to Switzerland further enhances its privacy-first credibility.</p>
+                    </div>
+                    <div class="lg:col-span-2 card">
+                        <h3 class="text-2xl font-bold mb-4">Key Stats</h3>
+                        <ul class="space-y-3 text-lg">
+                            <li class="flex items-center"><span class="accent-bg text-white rounded-full h-6 w-6 text-sm flex items-center justify-center mr-3">✓</span><strong>1M+</strong>&nbsp;Monthly Active Users</li>
+                            <li class="flex items-center"><span class="accent-bg text-white rounded-full h-6 w-6 text-sm flex items-center justify-center mr-3">✓</span><strong>2,000+</strong>&nbsp;Community Nodes</li>
+                            <li class="flex items-center"><span class="accent-bg text-white rounded-full h-6 w-6 text-sm flex items-center justify-center mr-3">✓</span><strong>Zero</strong>&nbsp;PII / Phone # Required</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="mt-8 card overflow-x-auto">
+                    <h3 class="text-2xl font-bold mb-4">Competitive Analysis Matrix</h3>
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-gray-50 text-gray-700 font-semibold">
+                            <tr>
+                                <th class="p-3">Feature</th>
+                                <th class="p-3 text-center">Session</th>
+                                <th class="p-3 text-center">Signal</th>
+                                <th class="p-3 text-center">Telegram</th>
+                                <th class="p-3 text-center">Threema</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr><td class="p-3 font-semibold">Anonymity (No PII)</td><td class="p-3 text-center text-green-600 font-bold">Yes</td><td class="p-3 text-center text-red-600 font-bold">No</td><td class="p-3 text-center text-red-600 font-bold">No</td><td class="p-3 text-center text-green-600 font-bold">Yes</td></tr>
+                            <tr><td class="p-3 font-semibold">Decentralized Network</td><td class="p-3 text-center text-green-600 font-bold">Yes</td><td class="p-3 text-center text-red-600 font-bold">No</td><td class="p-3 text-center text-red-600 font-bold">No</td><td class="p-3 text-center text-red-600 font-bold">No</td></tr>
+                            <tr><td class="p-3 font-semibold">E2E Encryption (Default)</td><td class="p-3 text-center text-green-600 font-bold">Yes</td><td class="p-3 text-center text-green-600 font-bold">Yes</td><td class="p-3 text-center text-red-600 font-bold">No</td><td class="p-3 text-center text-green-600 font-bold">Yes</td></tr>
+                            <tr><td class="p-3 font-semibold">Metadata Protection</td><td class="p-3 text-center font-semibold">High</td><td class="p-3 text-center font-semibold">Low</td><td class="p-3 text-center font-semibold">Very Low</td><td class="p-3 text-center font-semibold">Medium</td></tr>
+                            <tr><td class="p-3 font-semibold">Monetization Model</td><td class="p-3 text-center font-semibold">Token Utility</td><td class="p-3 text-center font-semibold">Donations</td><td class="p-3 text-center font-semibold">Ads/Premium</td><td class="p-3 text-center font-semibold">Paid App</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="economic-model">
+                <h2 class="section-title">The Economic Engine</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div class="card h-full">
+                        <h3 class="text-2xl font-bold mb-4">Genesis Token Allocation</h3>
+                        <p class="mb-4">SESH has a max supply of 240M. This chart shows the initial allocation, designed to recapitalize former stakeholders while dedicating significant resources to future staking rewards and ecosystem growth.</p>
+                        <div class="chart-container">
+                            <canvas id="tokenAllocationChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card h-full">
+                        <h3 class="text-2xl font-bold mb-4">The Session Pro "Burn-and-Remint" Flywheel</h3>
+                        <p class="mb-6">The core value accrual model is not simple deflation. It is a revenue redirection system that converts user subscription fees into on-chain buy pressure and enhanced rewards for node operators.</p>
+                        <div class="space-y-3">
+                            <div class="p-4 rounded-lg bg-gray-50 border-l-4 border-[#A95C54]"><strong>1. Fiat Payment:</strong> User subscribes to Session Pro via an app store.</div>
+                            <div class="p-4 rounded-lg bg-gray-50 border-l-4 border-[#BFA26E]"><strong>2. Market Buy:</strong> Fiat revenue is used to purchase SESH on the open market.</div>
+                            <div class="p-4 rounded-lg bg-gray-50 border-l-4 border-[#7E8D63]"><strong>3. Burn & Remint:</strong> Purchased SESH is burned, and an equal amount is reminted to the staking pool.</div>
+                            <div class="p-4 rounded-lg bg-gray-50 border-l-4 border-[#5d4037]"><strong>4. Staker Rewards:</strong> Node operators receive increased yield, incentivizing network security and growth.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="supply-demand">
+                <h2 class="section-title">The Core Conflict: Supply vs. Demand</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8">The investment thesis boils down to a race against time. This chart visualizes the core conflict: can the utility-driven demand from the Session Pro roadmap ramp up fast enough to absorb the predictable wave of new supply from vesting unlocks?</p>
+                <div class="card">
+                     <div class="chart-container h-[40vh] max-w-4xl">
+                        <canvas id="supplyDemandTimelineChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="outlook">
+                <h2 class="section-title">Investment Outlook & Risk Analysis</h2>
+                <div class="card mb-8">
+                     <h3 class="text-2xl font-bold mb-4 text-center">Multi-Scenario Price Forecast (2025-2030)</h3>
+                     <p class="text-center max-w-3xl mx-auto mb-6">The following chart models the three potential price trajectories for SESH. The logarithmic scale is crucial for visualizing the vast differences in potential outcomes between the bullish, neutral, and bearish cases, which are entirely dependent on the project's execution.</p>
+                     <div class="chart-container h-[45vh] max-w-4xl">
+                        <canvas id="priceProjectionChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="card mt-8">
+                    <h3 class="text-2xl font-bold mb-6">Interactive Risk Assessment</h3>
+                    <div class="flex flex-wrap gap-3 mb-4" id="risk-tabs-container">
+                        <button class="risk-tab active" data-risk="execution">Execution Risk</button>
+                        <button class="risk-tab" data-risk="tech">Technological Risk</button>
+                        <button class="risk-tab" data-risk="tokenomic">Tokenomic Risk</button>
+                        <button class="risk-tab" data-risk="competitive">Competitive Risk</button>
+                        <button class="risk-tab" data-risk="narrative">Narrative Risk</button>
+                    </div>
+                    <div id="risk-display-area" class="p-4 bg-gray-50 rounded-lg min-h-[150px]">
+                    </div>
+                </div>
+            </section>
+            
+            <section id="checklist">
+                <h2 class="section-title">Investor's Checklist</h2>
+                <div class="card">
+                    <p class="mb-4">Given the binary outlook, investors should monitor these key indicators to assess which scenario is unfolding in real-time.</p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                        <li class="flex items-start"><span class="accent-color font-bold text-xl mr-3">1.</span><div><strong class="block">App Store Ratings & Reviews:</strong> A direct proxy for user sentiment and product reliability.</div></li>
+                        <li class="flex items-start"><span class="accent-color font-bold text-xl mr-3">2.</span><div><strong class="block">Roadmap Adherence:</strong> Timely delivery of Session Pro (Q4 2025) and SNS.</div></li>
+                        <li class="flex items-start"><span class="accent-color font-bold text-xl mr-3">3.</span><div><strong class="block">On-Chain Burn Data:</strong> Post-launch, this provides direct, quantifiable proof of the economic flywheel's traction.</div></li>
+                        <li class="flex items-start"><span class="accent-color font-bold text-xl mr-3">4.</span><div><strong class="block">Price Action vs. Vesting Unlocks:</strong> Market resilience during the critical May 2026 supply cliff.</div></li>
+                        <li class="flex items-start"><span class="accent-color font-bold text-xl mr-3">5.</span><div><strong class="block">Active Node Count:</strong> A measure of network health and staker confidence.</div></li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+        
+        <footer class="text-center text-sm text-gray-500 mt-16 py-8 border-t border-gray-200">
+            <p>This interactive application is for informational purposes only and does not constitute financial advice. All data and analysis are synthesized from the "In-Depth Analysis and Multi-Scenario Forecast of the Session (SESH) Token" report. Cryptocurrency investments are inherently high-risk.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const appData = {
+            riskAnalysis: {
+                execution: {
+                    title: "Execution Risk (High)",
+                    text: "The entire economic thesis for the SESH token is predicated on the successful and timely delivery of the Session Pro feature suite, scheduled for Q4 2025. Any significant delays, critical bugs, or a failure to achieve product-market fit represents the single greatest risk to the token's value accrual model."
+                },
+                tech: {
+                    title: "Technological Risk (High)",
+                    text: "The persistent user complaints regarding application stability, message syncing failures, and unreliable notifications pose a direct threat to user retention. If the core product is not perceived as dependable, no amount of token-based utility will be sufficient to attract and retain a large user base."
+                },
+                tokenomic: {
+                    title: "Tokenomic Risk (Medium-High)",
+                    text: "The vesting schedule creates a predictable 'supply cliff' around May 2026. If utility-driven buy pressure from Session Pro has not yet reached a meaningful scale, the market could face a severe supply-demand imbalance, leading to significant downward price pressure."
+                },
+                competitive: {
+                    title: "Competitive Risk (Medium)",
+                    text: "Session operates in a market dominated by incumbents with immense network effects. While its anonymity and decentralization are powerful differentiators, they may not be sufficient to overcome the convenience and massive user bases of competitors like Signal and Telegram."
+                },
+                narrative: {
+                    title: "Narrative Risk (Medium)",
+                    text: "The team's decision to remove Perfect Forward Secrecy (PFS) remains a point of contention. A sustained negative narrative framing this as a 'security downgrade' could damage the project's reputation and hinder adoption among its core target demographic."
+                }
+            }
+        };
+
+        const palette = {
+            text: '#3d3d3d',
+            lightGray: '#e0e0e0',
+            background: '#fdfcfa',
+            chart: {
+                blue: '#547A8C',
+                green: '#7E8D63',
+                yellow: '#BFA26E',
+                red: '#A95C54',
+                purple: '#6E638D'
+            }
+        };
+
+        function wrapLabel(str, maxWidth) {
+            if (!str || typeof str !== 'string') return '';
+            if (str.length <= maxWidth) return str;
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + ' ' + words[i]).length > maxWidth) {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                } else {
+                    currentLine += ' ' + words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const defaultChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join(' ') : label;
+                        }
+                    }
+                },
+                legend: {
+                    labels: { color: palette.text, font: { size: 12 } }
+                }
+            },
+            scales: {
+                y: { ticks: { color: palette.text }, grid: { color: palette.lightGray, drawOnChartArea: false } },
+                x: { ticks: { color: palette.text }, grid: { display: false } },
+                r: {
+                     angleLines: { color: palette.lightGray },
+                     grid: { color: palette.lightGray },
+                     pointLabels: { color: palette.text, font: { size: 12 } },
+                     ticks: { backdropColor: 'rgba(255,255,255,0.75)', color: palette.text }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('tokenAllocationChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Staking Reward Pool', 'Project Treasury', 'Ecosystem & Community', 'Oxen Coin Claims', 'Service Node Bonus'].map(l => wrapLabel(l, 20)),
+                datasets: [{
+                    label: '% of Total Supply',
+                    data: [32.1, 25.0, 17.9, 12.5, 12.5],
+                    backgroundColor: Object.values(palette.chart),
+                    borderColor: palette.background,
+                    borderWidth: 3
+                }]
+            },
+            options: { ...defaultChartOptions }
+        });
+
+        new Chart(document.getElementById('supplyDemandTimelineChart'), {
+            type: 'line',
+            data: {
+                labels: ['May 2025', 'Q4 2025', 'May 2026', 'May 2027'],
+                datasets: [{
+                    label: 'Circulating Supply (Millions)',
+                    data: [79, 88, 130, 165],
+                    borderColor: palette.chart.red,
+                    yAxisID: 'y',
+                    tension: 0.1
+                }, {
+                    label: 'Demand Catalyst Events',
+                    data: [
+                        {x: 'May 2025', y: 10, label: 'TGE'},
+                        {x: 'Q4 2025', y: 40, label: 'Session Pro Beta'},
+                        {x: 'May 2026', y: 100, label: 'Session Pro v1'}
+                    ],
+                    borderColor: palette.chart.green,
+                    yAxisID: 'y1',
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    showLine: false
+                }]
+            },
+            options: { ...defaultChartOptions,
+                scales: {
+                    y: { type: 'linear', position: 'left', title: { display: true, text: 'Supply (Millions)' } },
+                    y1: { type: 'linear', position: 'right', display: false }
+                },
+                plugins: { ...defaultChartOptions.plugins,
+                    tooltip: {
+                         callbacks: {
+                            label: function(context) {
+                                if (context.dataset.label === 'Demand Catalyst Events') {
+                                    return context.raw.label;
+                                }
+                                return `${context.dataset.label}: ${context.formattedValue}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        new Chart(document.getElementById('priceProjectionChart'), {
+            type: 'line',
+            data: {
+                labels: ['2025', '2026', '2027', '2028', '2029', '2030'],
+                datasets: [
+                    { label: 'Bullish Case', data: [0.09, 0.18, 0.60, 1.25, 2.50, 3.50], borderColor: palette.chart.green, borderWidth: 3, tension: 0.4 },
+                    { label: 'Neutral Case', data: [0.09, 0.04, 0.05, 0.07, 0.15, 0.25], borderColor: palette.chart.yellow, borderWidth: 2, borderDash: [5, 5], tension: 0.4 },
+                    { label: 'Bearish Case', data: [0.09, 0.01, 0.008, 0.005, 0.002, 0.001], borderColor: palette.chart.red, borderWidth: 3, tension: 0.4 }
+                ]
+            },
+            options: {
+                ...defaultChartOptions,
+                scales: {
+                    y: { type: 'logarithmic', ticks: { color: palette.text, callback: (v) => '$' + v.toFixed(3) }, grid: { color: palette.lightGray } },
+                    x: { ticks: { color: palette.text }, grid: { display: false } }
+                },
+                plugins: {
+                    ...defaultChartOptions.plugins,
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) label += ': ';
+                                if (context.parsed.y !== null) label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 3 }).format(context.parsed.y);
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        const riskTabsContainer = document.getElementById('risk-tabs-container');
+        const riskDisplayArea = document.getElementById('risk-display-area');
+
+        function updateRiskDisplay(riskKey) {
+            const riskData = appData.riskAnalysis[riskKey];
+            if (riskData) {
+                riskDisplayArea.innerHTML = `<h4 class="font-bold text-lg mb-2 text-[#5d4037]">${riskData.title}</h4><p>${riskData.text}</p>`;
+            }
+            
+            riskTabsContainer.querySelectorAll('.risk-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.risk === riskKey);
+            });
+        }
+        
+        riskTabsContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('risk-tab')) {
+                const riskKey = event.target.dataset.risk;
+                updateRiskDisplay(riskKey);
+            }
+        });
+        
+        updateRiskDisplay('execution');
+
+    </script>
+</body>
+</html>
+
