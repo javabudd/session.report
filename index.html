@@ -448,7 +448,14 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                ...tooltipTitleCallback
+                ...tooltipTitleCallback,
+                scales: {
+                    r: {
+                        pointLabels: {
+                            display: true
+                        }
+                    }
+                }
             }
         });
 
