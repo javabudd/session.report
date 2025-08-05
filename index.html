@@ -34,11 +34,19 @@
             text-align: center;
             margin: 1rem 0;
             color: #118AB2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .flowchart-arrow::after {
             content: '▼';
             font-size: 2rem;
             line-height: 1;
+        }
+        @media (min-width: 768px) {
+            .flowchart-arrow::after {
+                content: '▶';
+            }
         }
     </style>
 </head>
@@ -105,7 +113,7 @@
             <div class="bg-white p-8 rounded-xl shadow-lg">
                 <h2 class="text-3xl font-bold mb-4 text-[#118AB2]">SESH Genesis Allocation</h2>
                 <p class="mb-4">The SESH token has a fixed total supply of 240 million. This chart shows how tokens were allocated at the project's launch, balancing rewards for past stakeholders with resources for future growth and network security.</p>
-                <div class="chart-container h-64 md:h-80">
+                <div class="chart-container h-72 md:h-96">
                     <canvas id="tokenAllocationChart"></canvas>
                 </div>
             </div>
@@ -132,40 +140,75 @@
         <section class="bg-white p-8 rounded-xl shadow-lg mb-12">
             <h2 class="text-3xl font-bold mb-6 text-center text-[#118AB2]">How Session Pro Fuels the Network</h2>
             <p class="text-center max-w-3xl mx-auto mb-8">The "burn-and-remint" mechanism is the heart of Session's DePIN economy. It translates real-world revenue from subscriptions into on-chain buy pressure and enhanced rewards for the node operators who power the network.</p>
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-start text-center">
+            <!-- Mobile view: vertical flow -->
+            <div class="grid grid-cols-1 gap-4 items-start text-center md:hidden">
                 <div class="flex flex-col items-center">
                     <div class="bg-[#FF6B6B] text-white rounded-lg p-4 w-full h-full flex flex-col justify-center">
                         <p class="font-bold text-lg">Step 1: User Pays</p>
                         <p class="text-sm">User subscribes to Session Pro with Fiat (USD, EUR) via App Store.</p>
                     </div>
                 </div>
-                <div class="flowchart-arrow hidden md:block"></div>
-                <div class="md:hidden flowchart-arrow"></div>
+                <div class="flowchart-arrow"></div>
                 <div class="flex flex-col items-center">
                     <div class="bg-[#FFD166] text-white rounded-lg p-4 w-full h-full flex flex-col justify-center">
                         <p class="font-bold text-lg">Step 2: Market Buy</p>
                         <p class="text-sm">A 3rd party uses the Fiat to buy SESH tokens on the open market.</p>
                     </div>
                 </div>
-                <div class="flowchart-arrow hidden md:block"></div>
-                <div class="md:hidden flowchart-arrow"></div>
-                 <div class="flex flex-col items-center">
+                <div class="flowchart-arrow"></div>
+                <div class="flex flex-col items-center">
                     <div class="bg-[#06D6A0] text-white rounded-lg p-4 w-full h-full flex flex-col justify-center">
                         <p class="font-bold text-lg">Step 3: Burn</p>
                         <p class="text-sm">The purchased SESH tokens are programmatically burned.</p>
                     </div>
                 </div>
-                <div class="flowchart-arrow hidden md:block"></div>
-                <div class="md:hidden flowchart-arrow"></div>
+                <div class="flowchart-arrow"></div>
                 <div class="flex flex-col items-center">
                     <div class="bg-[#118AB2] text-white rounded-lg p-4 w-full h-full flex flex-col justify-center">
                         <p class="font-bold text-lg">Step 4: Remint</p>
                         <p class="text-sm">An equal amount of SESH is re-minted into the Staking Reward Pool.</p>
                     </div>
                 </div>
-                <div class="flowchart-arrow hidden md:block"></div>
-                <div class="md:hidden flowchart-arrow"></div>
+                <div class="flowchart-arrow"></div>
                 <div class="flex flex-col items-center">
+                    <div class="bg-[#073B4C] text-white rounded-lg p-4 w-full h-full flex flex-col justify-center">
+                        <p class="font-bold text-lg">Step 5: Reward</p>
+                        <p class="text-sm">Node operators receive higher staking rewards, strengthening the network.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop view: horizontal flow with properly aligned arrows -->
+            <div class="hidden md:grid md:grid-cols-9 md:gap-0 md:items-center md:text-center">
+                <div class="col-span-1 flex flex-col items-center">
+                    <div class="bg-[#FF6B6B] text-white rounded-lg p-4 w-full h-full flex flex-col justify-center">
+                        <p class="font-bold text-lg">Step 1: User Pays</p>
+                        <p class="text-sm">User subscribes to Session Pro with Fiat (USD, EUR) via App Store.</p>
+                    </div>
+                </div>
+                <div class="flowchart-arrow"></div>
+                <div class="col-span-1 flex flex-col items-center">
+                    <div class="bg-[#FFD166] text-white rounded-lg p-4 w-full h-full flex flex-col justify-center">
+                        <p class="font-bold text-lg">Step 2: Market Buy</p>
+                        <p class="text-sm">A 3rd party uses the Fiat to buy SESH tokens on the open market.</p>
+                    </div>
+                </div>
+                <div class="flowchart-arrow"></div>
+                <div class="col-span-1 flex flex-col items-center">
+                    <div class="bg-[#06D6A0] text-white rounded-lg p-4 w-full h-full flex flex-col justify-center">
+                        <p class="font-bold text-lg">Step 3: Burn</p>
+                        <p class="text-sm">The purchased SESH tokens are programmatically burned.</p>
+                    </div>
+                </div>
+                <div class="flowchart-arrow"></div>
+                <div class="col-span-1 flex flex-col items-center">
+                    <div class="bg-[#118AB2] text-white rounded-lg p-4 w-full h-full flex flex-col justify-center">
+                        <p class="font-bold text-lg">Step 4: Remint</p>
+                        <p class="text-sm">An equal amount of SESH is re-minted into the Staking Reward Pool.</p>
+                    </div>
+                </div>
+                <div class="flowchart-arrow"></div>
+                <div class="col-span-1 flex flex-col items-center">
                     <div class="bg-[#073B4C] text-white rounded-lg p-4 w-full h-full flex flex-col justify-center">
                         <p class="font-bold text-lg">Step 5: Reward</p>
                         <p class="text-sm">Node operators receive higher staking rewards, strengthening the network.</p>
@@ -223,7 +266,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="bg-white p-8 rounded-xl shadow-lg mb-12">
             <h2 class="text-3xl font-bold mb-6 text-center text-[#118AB2]">Price Projections: 2025 - 2030</h2>
             <p class="text-center max-w-3xl mx-auto mb-8">This chart illustrates the three potential price trajectories for SESH over the next five years. These hypothetical scenarios are based on the bullish, neutral, and bearish cases, factoring in key catalysts like the Session Pro launch (Q4 2025) and major token unlocks (mid-2026). The logarithmic scale helps visualize the vast differences in potential outcomes.</p>
@@ -328,7 +371,24 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: tooltipTitleCallback.plugins
+                plugins: {
+                    ...tooltipTitleCallback.plugins,
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            padding: 20,
+                            color: energeticPalette.darkBlue,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    }
+                },
+                layout: {
+                    padding: {
+                        bottom: 10
+                    }
+                }
             }
         });
 
@@ -430,8 +490,12 @@
                 scales: {
                     y: {
                         type: 'logarithmic',
+                        min: .001,
+                        max: 4.00,
                         ticks: {
                             color: energeticPalette.darkBlue,
+                            autoSkip: true,
+                            autoSkipPadding: 7,
                             callback: function(value, index, values) {
                                 return '$' + value.toFixed(3);
                             }
@@ -470,4 +534,3 @@
     </script>
 </body>
 </html>
-
