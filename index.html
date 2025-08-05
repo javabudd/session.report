@@ -86,7 +86,42 @@
             </div>
             <div class="bg-white p-8 rounded-xl shadow-lg">
                 <h3 class="text-2xl font-bold mb-4 text-center text-[#118AB2]">How Onion Routing Works</h3>
-                <div class="flex justify-around items-center text-center">
+
+                <!-- Mobile view: vertical flow -->
+                <div class="flex flex-col items-center space-y-4 md:hidden">
+                    <div class="flex flex-col items-center">
+                        <div class="text-4xl">📱</div>
+                        <p class="font-semibold mt-2">You</p>
+                        <p class="text-xs text-gray-600">New York, USA</p>
+                    </div>
+                    <div class="flowchart-arrow"></div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-4xl">🛡️</div>
+                        <p class="font-semibold mt-2">Node 1</p>
+                        <p class="text-xs text-gray-600">London, UK</p>
+                    </div>
+                    <div class="flowchart-arrow"></div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-4xl">🛡️</div>
+                        <p class="font-semibold mt-2">Node 2</p>
+                        <p class="text-xs text-gray-600">Tokyo, Japan</p>
+                    </div>
+                    <div class="flowchart-arrow"></div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-4xl">🛡️</div>
+                        <p class="font-semibold mt-2">Node 3</p>
+                        <p class="text-xs text-gray-600">Sydney, Australia</p>
+                    </div>
+                    <div class="flowchart-arrow"></div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-4xl">📱</div>
+                        <p class="font-semibold mt-2">Recipient</p>
+                        <p class="text-xs text-gray-600">Berlin, Germany</p>
+                    </div>
+                </div>
+
+                <!-- Desktop view: horizontal flow -->
+                <div class="hidden md:flex md:justify-around md:items-center md:text-center">
                     <div class="flex flex-col items-center">
                         <div class="text-4xl">📱</div>
                         <p class="font-semibold mt-2">You</p>
@@ -117,6 +152,7 @@
                         <p class="text-xs text-gray-600">Berlin, Germany</p>
                     </div>
                 </div>
+
                 <p class="text-sm text-center mt-4">Each node only knows the previous and next step, so no single point can link sender to recipient, protecting your metadata.</p>
             </div>
         </section>
